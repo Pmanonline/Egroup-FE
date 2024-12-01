@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import backendURL from "../../config";
+import GroupImage from "../../assets/images/groupImage.png";
 
 const FRONTEND_URL =
   import.meta.env.VITE_FRONTEND_URL ||
@@ -10,13 +11,13 @@ const FRONTEND_URL =
 
 const GroupCard = ({ id, name, members, category, slug }) => (
   <Link
-    target="blank"
+    // target="blank"
     to={`${FRONTEND_URL}/Group/${slug}`}
     className="group-card flex-shrink-0 w-64 mr-4"
   >
     <div className="card bg-white rounded-lg shadow-md overflow-hidden">
       <img
-        src={"/src/assets/images/groupImage.png"}
+        src={GroupImage}
         alt={name}
         className="card-image w-full h-32 object-cover"
       />
@@ -66,7 +67,11 @@ const GroupsYouMayLike = () => {
   };
 
   if (loading) {
-    return <p className="text-center py-4">Loading groups...</p>;
+    return (
+      <div className="flex items-center justify-center h-screen w-screen absolute top-0 left-0 bg-white bg-opacity-80 z-50">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-solid"></div>
+      </div>
+    );
   }
 
   if (error) {
