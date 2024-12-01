@@ -4,7 +4,9 @@ import axios from "axios";
 import backendURL from "../../config";
 
 const FRONTEND_URL =
-  import.meta.env.VITE_FRONTEND_URL || "http://localhost:5173";
+  import.meta.env.VITE_FRONTEND_URL ||
+  "http://localhost:5173" ||
+  "https://egroup-nine.vercel.app";
 
 const GroupCard = ({ id, name, members, category, slug }) => (
   <Link
