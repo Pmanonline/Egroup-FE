@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.montserrat {
+  font-family: "Montserrat Subrayada", sans-serif;
+}
+
+/* Hide the horizontal scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* Style for vertical scrollbar */
+  height: 0; /* Hide horizontal scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.hide-horizontal-scrollbar {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.hide-horizontal-scrollbar::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+/* REACTQUILL */
+.custom-quill-container .ql-editor {
+  padding: 0; /* Remove default padding */
+  font-size: 16px; /* Base font size for small screens */
+  color: #333; /* Text color */
+  line-height: 1.6; /* Line spacing */
+}
+
+/* Adjust font size for larger screens */
+@media (min-width: 768px) {
+  .custom-quill-container .ql-editor {
+    font-size: 16px;
+  }
+}
+
+/* Additional custom styles */
+.custom-quill-container .ql-editor h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.custom-quill-container .ql-editor h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.custom-quill-container .ql-editor p {
+  margin-bottom: 1em;
+}
